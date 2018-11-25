@@ -22,7 +22,7 @@ namespace hbtvproxy
             WebHost.CreateDefaultBuilder(args).UseKestrel(options =>
             {
                 options.Listen(IPAddress.Loopback, 80); //HTTP port
-                // options.Listen(IPAddress.Loopback, 5443); //HTTPS port
+                options.Listen(IPAddress.Loopback, 443); //HTTPS port
             }).UseStartup<Startup>();
     }
 }
