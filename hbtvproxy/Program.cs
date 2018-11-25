@@ -19,10 +19,6 @@ namespace hbtvproxy
         }
 
         public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
-            WebHost.CreateDefaultBuilder(args).UseKestrel(options =>
-            {
-                options.Listen(IPAddress.Loopback, 80); //HTTP port
-                options.Listen(IPAddress.Loopback, 443); //HTTPS port
-            }).UseStartup<Startup>();
+            WebHost.CreateDefaultBuilder(args).UseStartup<Startup>();
     }
 }
